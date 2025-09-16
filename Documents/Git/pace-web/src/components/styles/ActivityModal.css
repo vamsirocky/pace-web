@@ -1,0 +1,56 @@
+/* Backdrop */
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  display: grid; place-items: center;
+  z-index: 9999;
+  animation: fadeIn .15s ease-out;
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+/* Card */
+.modal-card {
+  width: min(560px, calc(100vw - 32px));
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  padding: 20px 20px 24px;
+  position: relative;
+  transform-origin: center;
+  animation: pop .18s ease-out;
+}
+@keyframes pop {
+  from { transform: translateY(8px) scale(.98); opacity: 0; }
+  to   { transform: translateY(0)   scale(1);   opacity: 1; }
+}
+
+.modal-close {
+  position: absolute; right: 10px; top: 8px;
+  background: transparent; border: 0; font-size: 24px; color: #6b7280; cursor: pointer;
+}
+.modal-title {
+  margin: 6px 8px 8px; font-size: 22px; font-weight: 700;
+}
+.modal-desc {
+  margin: 8px; color:#374151; line-height: 1.5;
+}
+.modal-meta {
+  margin: 12px 8px 18px;
+  display: flex; gap: 18px; flex-wrap: wrap; color: #111827;
+}
+.modal-start {
+  margin: 0 8px; padding: 10px 14px; border:0; border-radius: 10px;
+  background: #0ea5e9; color:#fff; font-weight:600; cursor:pointer;
+  box-shadow: 0 8px 20px rgba(14,165,233,.35);
+}
+.modal-qr-block { margin: 6px 8px 0; text-align: center; }
+.modal-qr-title { font-weight: 600; margin-bottom: 8px; }
+.qr-wrap {
+  display: inline-flex; padding: 12px; background: #fff; border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+.modal-deeplink {
+  display: inline-block; margin-top: 10px;
+  color: #0ea5e9; text-decoration: underline;
+}
+.modal-waiting { margin-top: 8px; color:#6b7280; font-size: 14px; }

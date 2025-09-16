@@ -1,0 +1,73 @@
+body {
+  background: linear-gradient(135deg, #e6f9e6, #cce5cc);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-container {
+  margin: 80px auto;
+  max-width: 400px;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 128, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.icon-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #2e7d32;
+}
+
+.eco-icon {
+  font-size: 1.6rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.login-form input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-form button {
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #388e3c;
+}
+
+.toggle-text {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.toggle-text span {
+  color: #2e7d32;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
