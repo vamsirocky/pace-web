@@ -1,0 +1,67 @@
+.overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  z-index: 2000;
+}
+
+.overlay-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.overlay-content .notification-item {
+  display: flex;
+  align-items: center;           /*  Vertically aligns icon + text */
+  gap: 12px;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #2e7d32;
+}
+
+.overlay-content .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;                   /*  Consistent icon size */
+  height: 24px;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

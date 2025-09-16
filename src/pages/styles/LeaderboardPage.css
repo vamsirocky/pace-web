@@ -1,0 +1,141 @@
+/* ========================
+   Leaderboard Container
+======================== */
+.leaderboard-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Title Styling */
+.leaderboard-title {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+/* Info Button */
+.info-btn {
+  background: #007bff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
+}
+
+.info-btn:hover {
+  background: #0056b3;
+}
+
+/* ========================
+   Leaderboard Table
+======================== */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.leaderboard-table th {
+  background: #2e7d32;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.leaderboard-table tr:hover {
+  background: #e6f7e6;
+  transition: background 0.3s ease;
+}
+
+/* ========================
+   Highlighted Row (Logged-in User)
+======================== */
+.leaderboard-table .highlight-row {
+  background-color: #fff7cc !important;
+  font-weight: bold !important;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
+  cursor: help; /* '?' cursor for tooltip */
+  transition: transform 0.2s ease-in-out, background 0.3s ease;
+}
+
+.leaderboard-table .highlight-row:hover {
+  transform: scale(1.02);
+}
+
+/* ========================
+   Tooltip Styling
+======================== */
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 6px 10px;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%; /* Show above element */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  pointer-events: none; /* prevent blocking hover */
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.view-btn {
+  margin-top: 1rem;
+  background: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.view-btn:hover {
+  background: #1e7e34;
+}

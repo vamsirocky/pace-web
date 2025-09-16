@@ -1,0 +1,32 @@
+/* Hide the old button groups entirely */
+.navbar-buttons,
+.navbar-right { display: none !important; }
+
+/* Navbar container pinned to the top, content starts on the left */
+.navbar {
+  position: sticky;           
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* <<< keep content on the left */
+  padding: 0 16px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  z-index: 1000;
+}
+
+/* Left cluster (bell + profile) */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Cursor + color for the icon */
+.profile-icon {
+  cursor: pointer;
+  color: #1a3d1a;
+}
