@@ -10,17 +10,20 @@ from server.qlearning_app.router import router as ql_router
 # Import engine just to ensure the module loads and the psycopg event listeners are registered
 from server.qlearning_app.db_store_pg import engine 
 
-ALLOWED_ORIGINS = {"http://localhost:5173", "http://127.0.0.1:5173"}
+# ✅ Add Netlify domain here
+ALLOWED_ORIGINS = {
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://pace-web-sustainability.netlify.app",
+}
 
 app = FastAPI()
-
-
-
 
 @app.get("/")
 def root():
     return {"message": "Backend is live with ngrok!"}
 
+# ✅ Enable CORS for Netlify + local
 app.add_middleware(
     CORSMiddleware,
     allow_origins=list(ALLOWED_ORIGINS),

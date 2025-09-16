@@ -1,4 +1,3 @@
-
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -13,8 +12,23 @@ dotenv.config();
 
 const app = express();
 
+// ===== CORS Setup =====
+const allowedOrigins = [
+  "http://localhost:5173", // local dev
+  "https://pace-web-sustainability.netlify.app" // Netlify deploy
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
+
+// ✅ Explicitly handle preflight OPTIONS requests
+app.options('*', cors());
+
 // ===== Middleware =====
-app.use(cors());
 app.use(express.json());
 
 // ===== Routes =====
@@ -39,7 +53,6 @@ app.get('/api/env', (req, res) => {
 // ===== Start server =====
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(` Backend server running on port ${PORT}`);
-  console.log(" Connected to Supabase DB successfully");
+  console.log(`✅ Backend server running on port ${PORT}`);
+  console.log("🌐 Connected to Supabase DB successfully");
 });
-
