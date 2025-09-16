@@ -1,0 +1,96 @@
+.notification-wrapper {
+  position: relative;
+}
+
+.bell-icon {
+  position: relative;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Red dot for unread notification */
+.notification-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Hover-driven dropdown */
+.notification-wrapper:hover .notification-dropdown {
+  display: block;
+}
+
+.notification-dropdown {
+  display: none;
+  position: absolute;
+  top: 28px;
+  right: 0;
+  width: 280px;
+  background-color: white;
+  border: 1px solid #cceacc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.2);
+  animation: dropdownFade 0.3s ease;
+  z-index: 1000;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;        /* ✅ vertically center */
+  gap: 10px;
+  padding: 0.6rem;
+  border-bottom: 1px solid #e2f3e2;
+  font-size: 0.95rem;
+  color: #2e7d32;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  width: 24px;               /* ✅ consistent space */
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.message {
+  flex: 1;
+  text-align: left;
+}
+
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.show-more {
+  display: block;
+  text-align: right;
+  margin-top: 6px;
+  color: #007bff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.show-more:hover {
+  text-decoration: underline;
+}

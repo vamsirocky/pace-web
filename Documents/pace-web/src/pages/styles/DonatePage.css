@@ -1,0 +1,137 @@
+.donate-container {
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.donate-title {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 2rem;
+}
+
+.recommended-section h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.amount-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.amount-card {
+  background: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.amount-card:hover {
+  transform: scale(1.05);
+  background: #0056b3;
+}
+
+.amount-card.selected {
+  border: 2px solid white;
+}
+
+.form-section {
+  background-color: #f0fdf0;
+  border: 1px solid #cdeacc;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 128, 0, 0.1);
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form .form-label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  color: #333;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 1rem;
+  color: #333;
+  white-space: nowrap;   /*  keeps label text in one line */
+}
+
+
+.card-inputs input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.card-details {
+  display: flex;
+  gap: 10px;
+}
+
+.card-details input {
+  flex: 1;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: block;          /*  makes it a block element */
+  margin: 1rem auto 0;     /*  centers horizontally */
+}
+
+
+form button:hover {
+  background-color: #0056b3;
+}
+/* ************************************************New css */
+/* Pull donate form higher inside modal */
+.modal-body .donate-popup {
+  margin-top: -60px;
+}
