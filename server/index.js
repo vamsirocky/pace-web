@@ -14,8 +14,10 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://pace-web-sustainability.netlify.app"
+  "https://pace-web-sustainability.netlify.app",
+  "https://unsuperior-nenita-neurasthenically.ngrok-free.app"
 ];
+
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -32,7 +34,7 @@ app.use(cors({
 }));
 
 // ✅ Explicitly handle preflight OPTIONS requests
-app.options('*', cors());
+app.options('/*splat', cors());
 
 // ===== Middleware =====
 app.use(express.json());
