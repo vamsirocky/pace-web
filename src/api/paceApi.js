@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API = axios.create({
   // baseURL: 'http://localhost:5001',
-  baseURL: 'https://unsuperior-nenita-neurasthenically.ngrok-free.app',
+  baseURL: 'https://pace-node-backend.onrender.com',
 });
 
 export const signupUser = async (name, email, password) => {
