@@ -32,7 +32,7 @@ app.use(cors({
 }));
 
 // ✅ Explicitly handle preflight OPTIONS requests
-app.options('/{*splat}', cors());
+app.options('*', cors());
 
 // ===== Middleware =====
 app.use(express.json());
