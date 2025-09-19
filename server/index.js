@@ -25,8 +25,9 @@ app.use(cors({
   credentials: true
 }));
 
+
 // ✅ Explicitly handle preflight OPTIONS requests
-app.options('*', cors());
+app.options('/{*splat}', cors());
 
 // ===== Middleware =====
 app.use(express.json());
