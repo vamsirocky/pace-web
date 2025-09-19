@@ -150,7 +150,7 @@ def activity_complete(body: ActivityCompleteRequest):
     import requests
     try:
         resp = requests.post(
-            f"http://localhost:5001/profile/{user_id}/points",
+            f"https://pace-backend.onrender.com/profile/{user_id}/points",
             json={"points": int(reward)}   # adjust if redeemable differs
         )
         if resp.status_code != 200:
