@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API = axios.create({
   // baseURL: 'http://localhost:5001',
-  baseURL: 'https://pace-web-sustainability.netlify.app',
+  baseURL: 'https://unsuperior-nenita-neurasthenically.ngrok-free.app',
 });
 
 export const signupUser = async (name, email, password) => {
