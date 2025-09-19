@@ -36,7 +36,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Explicitly handle preflight OPTIONS requests for all routes with the same options
-app.options('*', cors(corsOptions));
+app.options('/*splat', cors(corsOptions));
 
 // Middleware to parse JSON bodies
 app.use(express.json());
