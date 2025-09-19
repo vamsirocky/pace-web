@@ -12,19 +12,24 @@ dotenv.config();
 
 const app = express();
 
-// ===== CORS Setup =====
 const allowedOrigins = [
-  "http://localhost:5173", // local dev
-  "https://pace-web-sustainability.netlify.app" // Netlify deploy
+  "http://localhost:5173",
+  "https://pace-web-sustainability.netlify.app"
 ];
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps, curl, postman)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(new Error("Not allowed by CORS"), false);
+    }
+    return callback(null, true);
+  },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
-
 
 // ✅ Explicitly handle preflight OPTIONS requests
 app.options('/{*splat}', cors());
